@@ -48,6 +48,7 @@
 	}
 </script>
 <style>
+	ul,
 	.mint-tabbar > .mint-tab-item a {
 		display: block;
 		text-decoration: none;
@@ -68,7 +69,11 @@
 		top: 40px;
 		bottom: 52px;
 		right: 0;
-	    overflow: auto;
+	    	overflow: auto;
 		-webkit-overflow-scrolling: touch;
+		padding: 10px;;
+	}
+	.mint-spinner-snake {
+		margin: 0 auto;
 	}
 </style>

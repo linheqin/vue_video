@@ -13,15 +13,33 @@ import { Header } from 'mint-ui';
 Vue.component(Header.name, Header);
 
 // 底部导航
-import { Tabbar, TabItem,Navbar,TabContainer, TabContainerItem } from 'mint-ui';
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
-Vue.component(Navbar.name, Navbar);
-Vue.component(TabContainer.name, TabContainer);
-Vue.component(TabContainerItem.name, TabContainerItem);
-
-
-
+import { 
+	Tabbar, 
+	TabItem,
+	Navbar,
+	TabContainer, 
+	TabContainerItem,
+	Swipe, 
+	SwipeItem,
+	InfiniteScroll,
+	Loadmore
+} from 'mint-ui';
+Vue.component(
+	Tabbar.name, 
+	Tabbar,TabItem.name, 
+	TabItem,Navbar.name,
+	Navbar,TabContainer.name, 
+	TabContainer,
+	TabContainerItem.name, 
+	TabContainerItem,
+	Swipe.name, 
+	Swipe,
+	SwipeItem.name, 
+	SwipeItem,
+	InfiniteScroll,
+	Loadmore.name, 
+	Loadmore
+);
 
 
 Vue.config.productionTip = false
