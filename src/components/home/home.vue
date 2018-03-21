@@ -2,6 +2,12 @@
 	<div class="wrap">
 		<mt-header fixed title="固定在顶部"></mt-header>
 		<div class="container">
+			<div class="isVip" v-if="isVip">
+				<mt-cell title="标题文字">
+					<img slot="icon" src="../../assets/logo.png" width="24" height="24">
+				  	<span style="color: green"><mt-button type="primary">primary</mt-button></span>
+				</mt-cell>
+			</div>
 			<div class="swriper_box">
 				<mt-swipe :auto="4000">
 				  	<mt-swipe-item>1</mt-swipe-item>
@@ -9,6 +15,7 @@
 				  	<mt-swipe-item>3</mt-swipe-item>
 				</mt-swipe>	
 			</div>
+			<div class="video_item_tit">全部</div>
 			
 		</div>
 	</div>
@@ -18,9 +25,10 @@
 	export default {
 		name: 'home',
 	  	data () {
-		    	return {
-		      	msg: '首页'
-		    	}
+	    	return {
+	      		msg: '首页',
+	      		isVip: true
+	    	}
 	  	}
 	}
 </script>
