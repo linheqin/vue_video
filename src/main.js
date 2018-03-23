@@ -6,7 +6,19 @@ import router from './router'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+// 引入commonjs
+import {apiUrl,globalParam} from '@/assets/js/common.js'
+// console.log(commonJs);
+Vue.prototype.apiUrl = apiUrl;
+Vue.prototype.globalParam = globalParam;
+
+
+// ajax数据请求插件
+import axios from 'axios'
+Vue.prototype.$ajax = axios
+
 Vue.use(Mint);
+
 
 // 头部标题
 import { Header } from 'mint-ui';

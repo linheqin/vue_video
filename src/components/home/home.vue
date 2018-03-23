@@ -15,21 +15,46 @@
 				  	<mt-swipe-item>3</mt-swipe-item>
 				</mt-swipe>	
 			</div>
-			<div class="video_item_tit">全部</div>
-			
+			<div class="video_item_tit">{{msg}}</div>
+
+			<allLists @upup="change" :msgs="msgs"></allLists>
+			<flLists @blur="change" :msgs1="msgs1"></flLists>
 		</div>
 	</div>
 </template>
 
 <script>
+ 	import allLists from './all-list/all-list';
+ 	import flLists from './fl-list/fl-list';
+
 	export default {
 		name: 'home',
+		components:{ allLists,flLists },
 	  	data () {
 	    	return {
 	      		msg: '首页',
+	      		msgs: "我就是从父级来的！",
+	      		msgs1: "子组件",
 	      		isVip: true
 	    	}
-	  	}
+	  	},
+	  	mounted: function () {
+	  		console.log(this.commonJs);
+			this.$ajax.get(this.apiUrl.userInfo).then(function (response) {
+			    console.log(response);
+			}).catch(function (response) {
+			    console.log(response);
+			});
+	    },
+	  	methods:{
+            parent(){
+                this.$.refs.child.childFn()
+            },
+            change(msg) {
+		        this.msg = msg;
+		        this.msgs1 = "我是从兄弟来的";
+		    }
+        }
 	}
 </script>
 
@@ -39,8 +64,8 @@
 		padding: 5px 0;
 	}
 	.swriper_box {
-		 overflow: hidden;
-    		position: relative;
+		overflow: hidden;
+    	position: relative;
 		height: 160px;
 		color: #fff;
 		font-size: 30px;
